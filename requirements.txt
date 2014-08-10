@@ -1,0 +1,8 @@
+-e git://github.com/mitsuhiko/flask.git@master#egg=Flask
+Jinja2>=2.7.3
+MarkupSafe>=0.23
+Werkzeug>=0.9.6
+click>=2.5
+itsdangerous>=0.24
+
+ipython>=2.2.0
