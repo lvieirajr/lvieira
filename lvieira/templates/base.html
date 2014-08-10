@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>lvieira.com</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
+    </head>
+
+    <body>
+        <header>
+            <div class="container">
+                <h1 class="logo">lvieira.com</h1>
+                <strong><nav>
+                    <ul class="menu">
+                        <li><a href="{{ url_for('home') }}">Home</a></li>
+                    </ul>
+                </nav></strong>
+            </div>
+        </header>
+
+        <div class="container">
+            {% block content %}{% endblock %}
+        </div>
+    </body>
+</html>
