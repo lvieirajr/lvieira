@@ -29,4 +29,10 @@ def create_app(mode):
         view_func=lambda: render_template('index.html')
     )
 
+    app.add_url_rule(
+        '/about',
+        endpoint='about',
+        view_func=lambda: render_template('about.html')
+    )
+
     return app
