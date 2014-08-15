@@ -1,5 +1,9 @@
 wsgiref>=0.1.2
 
+ipdb>=0.8
+ipython>=2.2.0
+gnureadline>=6.3.3
+
 git+git://github.com/mitsuhiko/flask.git@master
 Jinja2>=2.7.3
 MarkupSafe>=0.23
@@ -7,5 +11,4 @@ Werkzeug>=0.9.6
 click>=2.5
 itsdangerous>=0.24
 
-ipython>=2.2.0
-gnureadline>=6.3.3
+pymongo>=2.7.2
