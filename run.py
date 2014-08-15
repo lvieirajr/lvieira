@@ -11,6 +11,8 @@ mode = sys.argv[1] if len(sys.argv) > 1 else 'development'
 app = create_app(mode=mode)
 
 config = app.config.get_namespace('RUN_')
-config['port'] = os.environ.get('PORT', config['port'])
+config['port'] = os.environ.get('PORT', 5000)
+
+print(os.environ.get('MONGO_USER', 'blalbalbalbalba'))
 
 app.run(**config)
