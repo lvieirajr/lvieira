@@ -8,10 +8,10 @@
 
     <body>
         <header>
-            <div class="container">
-                <h1 class="logo">lvieira.com</h1>
+            <div class="menu">
                 <strong><nav>
-                    <ul class="menu">
+                    <h1 class="logo"><a href="{{ url_for('home') }}">lvieira.com</a></h1>
+                    <ul class="buttons">
                         <li><a href="{{ url_for('home') }}">Home</a></li>
                         <li><a href="{{ url_for('about') }}">About</a></li>
                     </ul>
@@ -19,7 +19,7 @@
             </div>
         </header>
 
-        <div class="container">
+        <div class="body">
             {% block content %}{% endblock %}
         </div>
     </body>
