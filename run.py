@@ -14,5 +14,6 @@ config = app.config.get_namespace('RUN_')
 config['port'] = os.environ.get('PORT', 5000)
 
 print(os.environ.get('MONGO_USER', 'blalbalbalbalba'))
+print(os.environ.get('MONGO_PASSWORD', 'blalbalbalbalba'))
 
 app.run(**config)
