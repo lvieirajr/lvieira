@@ -26,13 +26,15 @@ def create_app(mode):
     app.add_url_rule(
         '/',
         endpoint='home',
-        view_func=lambda: render_template('index.html')
+        view_func=lambda: render_template('index.html'),
+        methods=['GET']
     )
 
     app.add_url_rule(
         '/about',
         endpoint='about',
-        view_func=lambda: render_template('about.html')
+        view_func=lambda: render_template('about.html'),
+        methods=['GET']
     )
 
     return app
