@@ -21,16 +21,16 @@ header {
     font-size: 1.8em;
 }
 
-.menu .logo h1 {
+.menu .logo {
     display: inline;
 }
 
-.menu .logo h1 a {
+.menu .logo a {
     color: #FFFFFF;
     text-decoration: none;
 }
 
-.menu .logo h1 a:hover {
+.menu .logo a:hover {
     color: cornflowerblue;
 }
 
