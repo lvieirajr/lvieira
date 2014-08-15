@@ -1,31 +1,102 @@
+/*
+ * Menu
+ */
+
+header {
+    background-color: #202020;
+    height: 35px;
+    width: 100%;
+    opacity: .9;
+    margin-bottom: 10px;
+}
+
+.menu {
+    width: 66.67vw;
+    margin: 0 auto;
+}
+
+.menu .logo {
+    float: left;
+    margin: 0;
+    font-size: 1.8em;
+}
+
+.menu .logo h1 {
+    display: inline;
+}
+
+.menu .logo h1 a {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+.menu .logo h1 a:hover {
+    color: cornflowerblue;
+}
+
+.menu .buttons {
+    float: right;
+    margin-top: 8px;
+}
+
+.menu .buttons li {
+    display: inline;
+}
+
+.menu .buttons li + li {
+    margin-left: 2vw;
+}
+
+.menu .buttons li a {
+    color: #BBBBBB;
+    text-decoration: none;
+}
+
+.menu .buttons li a:hover {
+    color: #EEEEEE;
+}
+
+
+/*
+ * Body
+ */
+
 body {
     margin: 0;
     padding: 0;
-
-    background-color: #AAAAAA;
-
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    background-color: #AAAAAA;
     color: #222222;
 }
 
-.menuBar {
-    position: absolute;
-    width: 100vw;
-    height: 5vh;
-    top: 0;
-    left: 0;
-    margin-bottom: 10;
-
-    background-color: #202020;
-    opacity: 0.85;
+.body {
+    width: 66.67vw;
+    margin: 0 auto;
 }
 
-.menuBar .menuLogo {
-    position: absolute;
-    top: 0.5vh;
-    left: 0.5vw;
-    margin: 0;
-
-    font-size: 1.8vmax;
-    color: #FFFFFF;
+.body .main {
+    margin-top: 10px;
+    padding: 10px 0 30px 0;
+    background-color: #FFFFFF;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
 }
+
+.body h2 {
+    font-size: 3em;
+    margin-top: 40px;
+    text-align: center;
+    letter-spacing: -2px;
+}
+
+.body h3 {
+    font-size: 1.7em;
+    font-weight: 100;
+    margin-top: 30px;
+    text-align: center;
+    letter-spacing: -1px;
+    color: #888888;
+}
+
+
