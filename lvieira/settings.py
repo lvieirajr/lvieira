@@ -1,6 +1,6 @@
 # coding: UTF-8
 from __future__ import absolute_import, division, print_function, unicode_literals
 
-import os
+from os import path
 
-PROJECT_ROOT = os.path.abspath(os.path.dirname(__file__))
+PROJECT_ROOT = path.abspath(path.dirname(__file__))
