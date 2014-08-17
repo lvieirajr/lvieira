@@ -1,24 +1,21 @@
 # coding: UTF-8
 from __future__ import absolute_import, division, print_function, unicode_literals
 
-import os
-from flask import Blueprint
-from pymongo import Connection
-from urlparse import urlparse
+from flask import Blueprint, render_template_string
 
-pai_blueprint = Blueprint('pai', __name__)
-MONGO_URL = os.environ.get('MONGOHQ_URL')
+from lvieira.database import get_db
+
 
 __all__ = [
     'pai_blueprint',
 ]
 
+pai_blueprint = Blueprint('pai', __name__)
+db = get_db()
+
 
 @pai_blueprint.route("/pai/", methods=["GET"])
-def pai():
-    connection = Connection(MONGO_URL)
-    db = connection[urlparse(MONGO_URL).path[1:]]
-
-    return db.collection_names()
+def home():
+    return render_template_string('<br>'.join(db.collection_names()))
 
 

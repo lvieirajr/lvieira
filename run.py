@@ -4,7 +4,7 @@ from __future__ import absolute_import, division, print_function, unicode_litera
 import sys
 from os import environ
 
-from lvieira.main_app import create_app
+from lvieira.app import create_app
 
 app = create_app()
 app.run(**{
