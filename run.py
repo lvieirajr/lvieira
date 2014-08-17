@@ -1,16 +1,15 @@
 # coding: UTF-8
 from __future__ import absolute_import, division, print_function, unicode_literals
 
-import os
 import sys
+from os import environ
 
 from lvieira.main_app import create_app
 
-mode = sys.argv[1] if len(sys.argv) > 1 else 'development'
-
-app = create_app(mode=mode)
-
-config = app.config.get_namespace('RUN_')
-config['port'] = os.environ.get('PORT', 5000)
-
-app.run(**config)
+app = create_app()
+app.run(**{
+    'host': environ.get('HOST', '0.0.0.0'),
+    'port': environ.get('PORT', 5000),
+    'debug': len(sys.argv) > 1 and 'dev' in sys.argv[1],
+    'use_reloader': len(sys.argv) > 1 and 'dev' in sys.argv[1],
+})

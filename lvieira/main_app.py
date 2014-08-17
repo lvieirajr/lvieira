@@ -2,7 +2,6 @@
 from __future__ import absolute_import, division, print_function, unicode_literals
 
 from flask import Flask, render_template
-from os import path
 
 from .blueprints import pai_blueprint
 
@@ -11,22 +10,10 @@ __all__ = [
 ]
 
 
-def create_app(mode):
-    # Selecting correct instance (Development or Production)
-    instance_path = path.join(
-        path.abspath(path.dirname(__file__)), '%s_instance' % mode
-    )
-
-    # Creating the Flask object for the given instance
-    app = Flask(
-        'lvieira',
-        instance_path=instance_path,
-        instance_relative_config=True
-    )
-
-    # Setting the app configurations
+def create_app():
+    # Creating the Flask object and settings the configurations
+    app = Flask(__name__)
     app.config.from_object('lvieira.settings')
-    app.config.from_pyfile('config.cfg')
 
     # Adding the 'home' url rule
     app.add_url_rule(
