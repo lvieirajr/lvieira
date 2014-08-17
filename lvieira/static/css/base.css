@@ -26,12 +26,12 @@ header {
 }
 
 .menu .logo a {
-    color: #FFFFFF;
+    color: #BBBBBB;
     text-decoration: none;
 }
 
 .menu .logo a:hover {
-    color: cornflowerblue;
+    color: #EEEEEE;
 }
 
 .menu .buttons {
