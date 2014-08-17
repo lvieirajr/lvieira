@@ -1,13 +1,18 @@
-wsgiref>=0.1.2
-
 ipython>=2.2.0
 gnureadline>=6.3.3
 
-git+git://github.com/mitsuhiko/flask.git@master
-Jinja2>=2.7.3
-MarkupSafe>=0.23
-Werkzeug>=0.9.6
+wsgiref>=0.1.2
+
+jinja2>=2.7.3
+werkzeug>=0.9.6
+markupsafe>=0.23
 click>=2.5
 itsdangerous>=0.24
-
+wtforms>=2.0.1
 pymongo>=2.7.2
+mongoengine>=0.8.7
+
+git+git://github.com/mitsuhiko/flask.git@master
+flask-wtf>=0.10.0
+flask-mongoengine>=0.7.1
+flask-login>=0.2.11
