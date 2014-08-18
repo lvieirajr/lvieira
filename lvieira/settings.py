@@ -6,6 +6,8 @@ from os import path, environ
 
 PROJECT_ROOT = path.abspath(path.dirname(__file__))
 
+SECRET_KEY = environ.get('SECRET_KEY')
+
 MONGO_URI = environ.get('MONGOHQ_URL')
 MONGO_DBNAME = MONGO_URI.split('/')[-1]
 MONGODB_SETTINGS = {

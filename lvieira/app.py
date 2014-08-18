@@ -2,13 +2,15 @@
 from __future__ import absolute_import, division, print_function, unicode_literals
 
 from flask import Flask, render_template
-from flask.ext.mongoengine import MongoEngine
+from flask.ext.login import LoginManager
+from flask.ext.mongoengine import MongoEngine, MongoEngineSessionInterface
+from mongoengine import connect
 
-from .blueprints import pai_blueprint
 
 __all__ = [
     'app',
-    'db'
+    'db',
+    'login_manager'
 ]
 
 
@@ -32,8 +34,21 @@ app.add_url_rule(
     methods=['GET']
 )
 
-# Registering blueprints
-app.register_blueprint(pai_blueprint)
+# Setting up the login manager
+login_manager = LoginManager()
+login_manager.init_app(app)
+login_manager.login_view = 'pai.login'
 
-# Creating the database
+# Setting up database
 db = MongoEngine(app)
+app.session_interface = MongoEngineSessionInterface(db)
+
+# Creating the connection to the database
+connect(app.config.get('MONGO_DBNAME'), host=app.config.get('MONGO_URI'))
+
+
+
+
+
+
+

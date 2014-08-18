@@ -5,6 +5,10 @@ import sys
 from os import environ
 
 from lvieira.app import app
+from lvieira.blueprints import pai_blueprint
+
+# Registering blueprints
+app.register_blueprint(pai_blueprint)
 
 app.run(**{
     'host': environ.get('HOST', '0.0.0.0'),
