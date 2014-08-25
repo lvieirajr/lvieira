@@ -33,7 +33,7 @@ def login():
 @pai_blueprint.route('/pai/', methods=['GET'])
 @login_required
 def home():
-    return render_template('index.html')
+    return render_template('pai/index.html')
 
 
 @pai_blueprint.route('/pai/logout', methods=['GET'])
