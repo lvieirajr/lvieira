@@ -1,21 +1,17 @@
 # coding: UTF-8
 from __future__ import absolute_import, division, print_function, unicode_literals
 
-from mongoengine import (
-    Document,
-    StringField,
-    EmailField,
-    DateTimeField,
-    DecimalField,
-    DictField,
-    ReferenceField
-)
+from mongoengine import *
 from decimal import Decimal
 from uuid import uuid4
 from datetime import datetime
 
 __all__ = [
     'User',
+    'Land',
+    'Building',
+    'Partner',
+    'Project',
 ]
 
 
@@ -49,11 +45,13 @@ class Land(Document):
     name = StringField()
     address = StringField(required=True)
 
-    width = DecimalField(required=True)
-    height = DecimalField(required=True)
+    width = DecimalField(required=True, default=Decimal('0.00'))
+    height = DecimalField(required=True, default=Decimal('0.00'))
 
-    purchase_price = DecimalField(required=True)
+    purchase_price = DecimalField(required=True, default=Decimal('0.00'))
     costs = DictField()
+
+    buildings = ListField()
 
     def __unicode__(self):
         if self.name and self.address:
@@ -63,32 +61,39 @@ class Land(Document):
 
     @property
     def size(self):
-        if self.width and self.height:
-            return Decimal(self.width * self.height)
-        else:
-            return Decimal('0.0')
+        return Decimal(self.width * self.height)
 
     @property
-    def cost(self):
+    def total_cost(self):
         return self.purchase_price + sum(value for key, value in self.costs.items())
+
+    @property
+    def cost_per_building(self):
+        return self.total_cost / Decimal(len(self.buildings))
 
 
 class Building(Document):
     name = StringField()
+    costs = DictField()
     land = ReferenceField(Land)
 
-    costs = DictField()
-
     def __unicode__(self):
-        if self.name and self.land:
-            return self.name + ' no terreno: ' + unicode(self.land)
-        elif self.name:
-            return self.name
-        elif self.land:
-            return 'Construção no terreno: ' + unicode(self.land)
-        else:
-            return 'Construção'
+        return self.name or 'Construção'
 
     @property
     def cost(self):
         return sum(value for key, value in self.costs.items())
+
+
+class Partner(Document):
+    name = StringField()
+
+
+class Project(Document):
+    name = StringField()
+    partners = ListField(required=True)
+    lands = ListField(ReferenceField(Land))
+
+
+
+

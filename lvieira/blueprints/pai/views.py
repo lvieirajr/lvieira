@@ -19,7 +19,7 @@ def load_user(_id):
     return User.objects(uuid=_id).first() if _id else None
 
 
-@pai_blueprint.route('/pai/login', methods=['GET', 'POST'])
+@pai_blueprint.route('/pai/login', methods=['GET'])
 def login():
     if request.method == 'POST':
         user = User.objects(email=request.form['email']).first()
@@ -27,7 +27,7 @@ def login():
         if user and user.password == request.form['password'] and login_user(user):
             return redirect('/pai')
 
-    return render_template('login.html')
+    return render_template('pai/login.html')
 
 
 @pai_blueprint.route('/pai/', methods=['GET'])
