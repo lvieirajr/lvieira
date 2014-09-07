@@ -94,7 +94,7 @@ class Partner(Document):
 
 
 class Project(Document):
-    name = StringField(required=True)
+    name = StringField(unique=True, required=True)
     partners = ListField(required=True)
     lands = ListField(ReferenceField(Land))
 

@@ -1,0 +1,17 @@
+{% extends "pai/base.html" %}
+
+{% block content %}
+    <div class="main">
+        <a href="{{ url_for('pai.home') }}">HOME</a><br>
+        <a href="{{ url_for('pai.new_project') }}">Adicionar Projeto</a><br>
+
+        <p>Nome do Projeto: {{ project.name }}</p>
+
+        {% for partner in project.partners %}
+            <p>Sócio: {{ partner.0 }}   Percentual: {{ partner.1 }}%</p>
+        {% endfor %}
+
+    </div>
+{% endblock %}
+
+

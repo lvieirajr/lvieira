@@ -53,20 +53,39 @@ def home():
 @pai_blueprint.route('/pai/projetos/', methods=['GET'])
 @login_required
 def projects():
-    return render_template('pai/projects.html', projects=Project.objects())
+    return render_template('pai/projects/index.html', projects=Project.objects())
+
+@pai_blueprint.route('/pai/projetos/<id>', methods=['GET'])
+@login_required
+def project(id):
+    return render_template('pai/projects/project.html', project=Project.objects(id=id).first())
 
 
 @pai_blueprint.route('/pai/projetos/novo', methods=['GET', 'POST'])
 @login_required
-def add_project():
+def new_project():
     if request.method == 'POST':
         data = request.form
 
-        Project(name=data['name'], partners=[current_user.email] + data.getlist('partners')).save()
+        partner_emails = [current_user.email] + data.getlist('partners')
+        partner_percents = data.getlist('percents')
+
+        partners = []
+        for i in range(len(partner_emails)):
+            partners.append([partner_emails[i], int(partner_percents[i])])
+
+        try:
+            Project(name=data['name'], partners=partners).save()
+        except:
+            return render_template(
+                'pai/projects/new.html',
+                partners=json.dumps([[p.name, p.email] for p in Partner.objects() if p.email != current_user.email]),
+                message='Projeto já existe',
+            )
 
         return projects()
     else:
         return render_template(
-            'pai/add_project.html',
+            'pai/projects/new.html',
             partners=json.dumps([[p.name, p.email] for p in Partner.objects() if p.email != current_user.email]),
         )
