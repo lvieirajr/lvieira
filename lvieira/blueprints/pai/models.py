@@ -86,14 +86,17 @@ class Building(Document):
 
 
 class Partner(Document):
-    name = StringField()
+    name = StringField(required=True)
+    email = EmailField(unique=True, required=True)
+
+    def __unicode__(self):
+        return self.name or 'Sócio'
 
 
 class Project(Document):
-    name = StringField()
+    name = StringField(required=True)
     partners = ListField(required=True)
     lands = ListField(ReferenceField(Land))
 
-
-
-
+    def __unicode__(self):
+        return self.name or 'Projeto'
