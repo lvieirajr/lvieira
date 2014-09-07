@@ -2,8 +2,11 @@
 
 {% block content %}
     <div class="main">
-        <a href="{{ url_for('pai.home') }}">HOME</a>
-        <a href="{{ url_for('pai.projects') }}">Projetos</a><br><br>
+        <a href="{{ url_for('pai.home') }}">HOME</a><br>
+        <a href="{{ url_for('pai.projects') }}">Projetos</a><br>
+        <a href="{{ url_for('pai.new_project') }}">Novo Projeto</a><br>
+        <a href="{{ url_for('pai.partners') }}">Sócios</a><br>
+        <a href="{{ url_for('pai.new_partner') }}">Novo Sócio</a><br>
     </div>
     <div>
         {{ message }}
@@ -39,9 +42,9 @@
 
             for (i = 0; i < partners.length; i++) {
                 if (i == 0)
-                    newPartner.innerHTML = "<option value='" + partners[i][1] + "' selected>" + partners[i][0] + "</option>";
+                    newPartner.innerHTML += "<option value='" + partners[i][1] + "' selected>" + partners[i][0] + "</option>";
                 else
-                    newPartner.innerHTML = "<option value='" + partners[i][1] + "'>" + partners[i][0] + "</option>";
+                    newPartner.innerHTML += "<option value='" + partners[i][1] + "'>" + partners[i][0] + "</option>";
             }
 
             document.getElementById('partnersDiv').appendChild(newPartnerLabel);

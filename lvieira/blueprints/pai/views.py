@@ -3,9 +3,14 @@ from __future__ import absolute_import, division, print_function, unicode_litera
 
 import json
 from flask import Blueprint, redirect, render_template, request
-from flask.ext.login import login_required, login_user, logout_user, current_user
+from flask.ext.login import login_required, logout_user, current_user
 
 from .models import User, Project, Partner
+from .controllers import (
+    login_controller,
+    new_project_controller,
+    new_partner_controller,
+)
 from lvieira.app import login_manager
 
 pai_blueprint = Blueprint('pai', __name__)
@@ -22,26 +27,13 @@ def load_user(_id):
 
 @pai_blueprint.route('/pai/login', methods=['GET', 'POST'])
 def login():
-    if request.method == 'POST':
-        user = User.objects(email=request.form['email']).first()
-
-        if user and user.password == request.form['password'] and login_user(user):
-            partner = Partner.objects(email=user.email).first()
-
-            if not partner:
-                partner = Partner(name=user.name, email=user.email)
-                partner.save()
-
-            return redirect('/pai')
-
-    return render_template('pai/login.html')
+    return redirect('/pai/') if login_controller(request) else render_template('/pai/login.html')
 
 
 @pai_blueprint.route('/pai/logout', methods=['GET'])
 @login_required
 def logout():
-    logout_user()
-    return redirect('/pai/login')
+    return redirect('/pai/login') if logout_user() else redirect('/pai/')
 
 
 @pai_blueprint.route('/pai/', methods=['GET'])
@@ -64,28 +56,50 @@ def project(id):
 @pai_blueprint.route('/pai/projetos/novo', methods=['GET', 'POST'])
 @login_required
 def new_project():
-    if request.method == 'POST':
-        data = request.form
+    created = new_project_controller(request)
 
-        partner_emails = [current_user.email] + data.getlist('partners')
-        partner_percents = data.getlist('percents')
-
-        partners = []
-        for i in range(len(partner_emails)):
-            partners.append([partner_emails[i], int(partner_percents[i])])
-
-        try:
-            Project(name=data['name'], partners=partners).save()
-        except:
-            return render_template(
-                'pai/projects/new.html',
-                partners=json.dumps([[p.name, p.email] for p in Partner.objects() if p.email != current_user.email]),
-                message='Projeto já existe',
-            )
-
+    if created:
         return projects()
     else:
-        return render_template(
-            'pai/projects/new.html',
-            partners=json.dumps([[p.name, p.email] for p in Partner.objects() if p.email != current_user.email]),
-        )
+        partners = json.dumps([
+            [p.name, p.email] for p in Partner.objects()
+            if p.email != current_user.email
+        ])
+
+        if created is None:
+            return render_template(
+                'pai/projects/new.html',
+                partners=partners,
+                message='Projeto já existe'
+            )
+        else:
+            return render_template('pai/projects/new.html', partners=partners)
+
+
+@pai_blueprint.route('/pai/socios/', methods=['GET'])
+@login_required
+def partners():
+    return render_template('pai/partners/index.html', partners=Partner.objects())
+
+
+@pai_blueprint.route('/pai/socios/<id>', methods=['GET'])
+@login_required
+def partner(id):
+    return render_template('pai/partners/partner.html', partner=Partner.objects(id=id).first())
+
+
+@pai_blueprint.route('/pai/socios/novo', methods=['GET', 'POST'])
+@login_required
+def new_partner():
+    created = new_partner_controller(request)
+
+    if created:
+        return partners()
+    else:
+        if created is None:
+            return render_template(
+                'pai/partners/new.html',
+                message='Projeto já existe'
+            )
+        else:
+            return render_template('pai/partners/new.html')

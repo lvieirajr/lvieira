@@ -23,7 +23,14 @@ class User(Document):
     created = DateTimeField(default=datetime.now())
 
     def __unicode__(self):
-        return self.name + ' (' + self.email + ')'
+        if self.name and self.email:
+            return self.name + ' (' + self.email + ')'
+        elif self.name:
+            return self.name
+        elif self.email:
+            return self.email
+        else:
+            return 'Usuário'
 
     def get_id(self):
         return self.uuid
