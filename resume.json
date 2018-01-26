@@ -1,0 +1,237 @@
+{
+  "basics": {
+    "name": "Luis Antônio Vieira Junior",
+    "label": "Software Engineer",
+    "picture": "https://scontent-iad3-1.xx.fbcdn.net/v/t1.0-9/13654206_1082192561851505_4022874632631945461_n.jpg?oh=5c70fc08533070bf4f359e099db63e79&oe=5AF05F97",
+    "email": "lvieira@lvieira.com",
+    "phone": "+55 21 99770 6181",
+    "website": "http://www.lvieira.com/",
+    "summary": "",
+    "location": {
+      "address": "Rua Dr. Rodrigues Alves, 191",
+      "postalCode": "24425-076",
+      "city": "Niteroi",
+      "countryCode": "BR",
+      "region": "Rio de Janeiro"
+    },
+    "profiles": [
+      {
+        "network": "Facebook",
+        "username": "lvieirajr",
+        "url": "https://www.facebook.com/lvieirajr"
+      },
+      {
+        "network": "Twitter",
+        "username": "lvieira_jr",
+        "url": "https://twitter.com/lvieira_jr"
+      },
+      {
+        "network": "LinkedIn",
+        "username": "lvieirajr",
+        "url": "https://www.linkedin.com/in/lvieirajr/"
+      },
+      {
+        "network": "Github",
+        "username": "lvieirajr",
+        "url": "https://github.com/lvieirajr/"
+      }
+    ]
+  },
+  "work": [
+    {
+      "company": "Carta",
+      "position": "Lead Software Engineer",
+      "website": "https://www.carta.com/",
+      "startDate": "2017-06-19",
+      "endDate": "",
+      "summary": "",
+      "highlights": []
+    },
+    {
+      "company": "Carta",
+      "position": "Senior Software Engineer",
+      "website": "https://www.carta.com/",
+      "startDate": "2016-07-04",
+      "endDate": "2017-06-19",
+      "summary": "",
+      "highlights": []
+    },
+    {
+      "company": "GridClass (WPensar)",
+      "position": "Lead Software Engineer",
+      "website": "http://www.gridclass.com.br/",
+      "startDate": "2015-03-01",
+      "endDate": "2016-06-30",
+      "summary": "",
+      "highlights": []
+    },
+    {
+      "company": "LiveCapital (MyFreeComm)",
+      "position": "Software Engineer",
+      "website": "https://www.livecapital.com.br/",
+      "startDate": "2014-07-01",
+      "endDate": "2015-02-28",
+      "summary": "",
+      "highlights": []
+    },
+    {
+      "company": "LiveCapital (MyFreeComm)",
+      "position": "Software Engineering Intern",
+      "website": "https://www.livecapital.com.br/",
+      "startDate": "2013-09-01",
+      "endDate": "2014-06-30",
+      "summary": "",
+      "highlights": []
+    },
+    {
+      "company": "LMDC",
+      "position": "Software Engineering Intern",
+      "website": "http://www.lmdc.uff.br/",
+      "startDate": "2013-01-02",
+      "endDate": "2013-08-31",
+      "summary": "",
+      "highlights": []
+    },
+    {
+      "company": "TOILERS",
+      "position": "Research Assistant",
+      "website": "http://toilers.mines.edu/",
+      "startDate": "2012-05-01",
+      "endDate": "2012-07-31",
+      "summary": "",
+      "highlights": []
+    },
+    {
+      "company": "LMDC",
+      "position": "Software Engineering Intern",
+      "website": "http://www.lmdc.uff.br/",
+      "startDate": "2010-09-01",
+      "endDate": "2011-12-31",
+      "summary": "",
+      "highlights": []
+    }
+  ],
+  "volunteer": [],
+  "education": [
+    {
+      "institution": "Universidade Federal Fluminense",
+      "area": "Computer Science",
+      "studyType": "Bachelor of Science",
+      "startDate": "2010-03-01",
+      "endDate": "2014-06-30",
+      "gpa": "6.91 / 10.0",
+      "courses": []
+    },
+    {
+      "institution": "Colorado School of Mines",
+      "area": "Computer Science",
+      "studyType": "Foreign Exchange",
+      "startDate": "2012-01-01",
+      "endDate": "2012-12-31",
+      "gpa": "3.375 / 4.0",
+      "courses": []
+    }
+  ],
+  "awards": [],
+  "publications": [],
+  "skills": [
+    {
+      "name": "Software Engineering",
+      "level": "Master",
+      "keywords": [
+        "Git",
+        "Tests",
+        "REST",
+        "Optimization"
+      ]
+    },
+    {
+      "name": "Back-End",
+      "level": "Master",
+      "keywords": [
+        "Python",
+        "Django",
+        "Flask",
+        "Celery"
+      ]
+    },
+    {
+      "name": "Front-End",
+      "level": "Advanced",
+      "keywords": [
+        "Javascript",
+        "React",
+        "Redux",
+        "HTML"
+      ]
+    },
+    {
+      "name": "Other",
+      "level": "Intermediate",
+      "keywords": [
+        "Mongo",
+        "Postgres",
+        "KnockoutJS"
+      ]
+    },
+    {
+      "name": "Other",
+      "level": "Beginner",
+      "keywords": [
+        "AWS",
+        "Ruby",
+        "C",
+        "C++",
+        "QT"
+      ]
+    }
+  ],
+  "languages": [
+    {
+      "language": "Portuguese",
+      "fluency": "Native speaker"
+    },
+    {
+      "language": "English",
+      "fluency": "Fluent"
+    },
+    {
+      "language": "Spanish",
+      "fluency": "Fluent"
+    },
+    {
+      "language": "German",
+      "fluency": "Beginner"
+    }
+  ],
+  "interests": [
+    {
+      "name": "Investing",
+      "keywords": [
+        "Stocks",
+        "Cryptocurrencies"
+      ]
+    },
+    {
+      "name": "Music",
+      "keywords": [
+        "Country",
+        "Samba",
+        "Instruments"
+      ]
+    },
+    {
+      "name": "Travelling",
+      "keywords": [
+        "Backpacking",
+        "Food"
+      ]
+    }
+  ],
+  "references": [
+    {
+      "name": "Eduardo Medina",
+      "reference": "Luis is a dedicated and extremely competent software engineer. Developing algorithms to solve complex problems and leading-edge programming are his specialties. Any company could leverage his skills and abilities to improve their engineering team."
+    }
+  ]
+}
