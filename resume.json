@@ -6,7 +6,16 @@
         "email": "lvieira@lvieira.com",
         "phone": "+55 21 99770 6181",
         "website": "http://www.lvieira.com/",
-        "summary": "Technology enthusiast, currently working as a Lead Software Engineer @ Carta.",
+        "summary": [
+            "Tech enthusiast, currently working as a Lead Software Engineer @ Carta.\n",
+            "After several years building software as a Full-Stack Engineer ",
+            "I am now leveraging the experience acquired during this period to help the ",
+            "engineering teams not only perform better, but also: feel more empowered, ",
+            "happier with their assignments and with a bigger sense of ownership towards ",
+            "the product they are building.\n",
+            "My specialties range from technical skills such as Python, Django, Javascript and React; ",
+            "to more EQ related skills such as communication, organization and leadership."
+        ],
         "location": {
             "address": "Rua Dr. Rodrigues Alves, 191",
             "postalCode": "24425-076",
@@ -231,7 +240,7 @@
     "references": [
         {
             "name": "Eduardo Medina",
-            "reference": "Luis is a dedicated and extremely competent software engineer. Developing algorithms to solve complex problems and leading-edge programming are his specialties. Any company could leverage his skills and abilities to improve their engineering team."
+            "reference": "Luis is a dedicated and extremely competent Software Engineer. Developing algorithms to solve complex problems and cutting-edge programming are his specialties. Any company could leverage his skills and abilities to improve their engineering team."
         }
     ]
 }
