@@ -17,6 +17,7 @@ include/
 lib/
 lib64/
 parts/
+public/
 sdist/
 share/
 var/
