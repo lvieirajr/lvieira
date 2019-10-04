@@ -1,27 +1,18 @@
 {
     "basics": {
-        "name": "Luis Antônio Vieira Junior",
+        "name": "Luis Antonio Vieira Junior",
         "label": "Software Engineer",
         "picture": "https://raw.githubusercontent.com/lvieirajr/lvieirajr.github.io/master/picture.png",
         "email": "lvieira@lvieira.com",
-        "phone": "+55 21 99770 6181",
+        "phone": "+1 (650) 885-1710",
         "website": "http://www.lvieira.com/",
-        "summary": [
-            "After several years building software as a Full-Stack Engineer ",
-            "I am now leveraging the experience acquired during this period to help Carta ",
-            "on the hiring process, mentoring of younger engineers ",
-            "and helping the engineering teams not only perform better, but also: ",
-            "feel more empowered and with a bigger sense of ownership towards the product ",
-            "they are building. With all that, I still write production code nearly every day.\n",
-            "My specialties range from technical skills such as Python, Django, Javascript and React; ",
-            "to more EQ related skills such as communication, organization and leadership."
-        ],
+        "summary": "After several years building software as a Full-Stack Engineer I am now leveraging the experience acquired during this period to assist Carta on the hiring process, mentoring of junior engineers and helping the engineering teams not only perform better, but also feel more empowered and with a bigger sense of ownership towards the product they are building. With all that, I still write production code every day.\nMy specialties range from technical skills such as Python, Django, Javascript and React; to more EQ related skills such as communication, organization and leadership.",
         "location": {
-            "address": "Rua Dr. Rodrigues Alves, 191",
-            "postalCode": "24425-076",
-            "city": "Niteroi",
-            "countryCode": "BR",
-            "region": "Rio de Janeiro"
+            "address": "575 S Rengstorff Avenue, #21",
+            "postalCode": "94040",
+            "city": "Mountain View",
+            "countryCode": "US",
+            "region": "California"
         },
         "profiles": [
             {
@@ -52,7 +43,6 @@
             "position": "Lead Software Engineer",
             "website": "https://www.carta.com/",
             "startDate": "2017-06-19",
-            "endDate": "",
             "summary": "",
             "highlights": []
         },
@@ -145,16 +135,6 @@
     "publications": [],
     "skills": [
         {
-            "name": "Software Engineering",
-            "level": "Master",
-            "keywords": [
-                "Git",
-                "Tests",
-                "REST",
-                "Optimization"
-            ]
-        },
-        {
             "name": "Back-End",
             "level": "Master",
             "keywords": [
@@ -176,22 +156,22 @@
         },
         {
             "name": "Other",
-            "level": "Intermediate",
+            "level": "Master",
             "keywords": [
-                "Mongo",
-                "Postgres",
-                "KnockoutJS"
+                "Git",
+                "Tests",
+                "REST",
+                "Docker"
             ]
         },
         {
             "name": "Other",
-            "level": "Beginner",
+            "level": "Intermediate",
             "keywords": [
-                "AWS",
-                "Ruby",
-                "C",
-                "C++",
-                "QT"
+                "RPC",
+                "Mongo",
+                "PostgresSQL",
+                "AWS"
             ]
         }
     ],
